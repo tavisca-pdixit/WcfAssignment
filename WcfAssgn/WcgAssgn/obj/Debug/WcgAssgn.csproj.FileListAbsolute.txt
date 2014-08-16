@@ -1,0 +1,5 @@
+D:\DemoWebService\WcgAssgn\WcgAssgn\obj\Debug\WcgAssgn.csprojResolveAssemblyReference.cache
+D:\DemoWebService\WcgAssgn\WcgAssgn\bin\WcgAssgn.dll
+D:\DemoWebService\WcgAssgn\WcgAssgn\bin\WcgAssgn.pdb
+D:\DemoWebService\WcgAssgn\WcgAssgn\obj\Debug\WcgAssgn.dll
+D:\DemoWebService\WcgAssgn\WcgAssgn\obj\Debug\WcgAssgn.pdb
