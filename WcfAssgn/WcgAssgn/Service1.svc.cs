@@ -29,7 +29,7 @@ namespace WcgAssgn
                 return 0;
             }
 
-            throw new FaultException(new FaultReason("Employee Record Not Found For Inserting Remarks"), new FaultCode("102"));
+           // throw new FaultException(new FaultReason("Employee Record Not Found For Inserting Remarks"), new FaultCode("102"));
         }
 
         public int EmployeeRemark(string empId, string remark)
@@ -69,10 +69,18 @@ namespace WcgAssgn
             //throw new NotImplementedException();
         }
 
-        public EmployeeData Search(string empId)
+        public EmployeeData SearchById(string empId)
         {
             EmployeeData employee = new EmployeeData();
             employee = employeeList.Find(item => item.employeeId == empId);
+            return employee;
+
+        }
+
+        public EmployeeData SearchByName(string empName)
+        {
+            EmployeeData employee = new EmployeeData();
+            employee = employeeList.Find(item => item.employeeName == empName);
             return employee;
 
         }

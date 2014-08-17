@@ -29,7 +29,10 @@ namespace WcgAssgn
         IEnumerable<EmployeeData> GetAllEmployees();
 
         [OperationContract]
-        EmployeeData Search(string empId);
+        EmployeeData SearchById(string empId);
+
+        [OperationContract]
+        EmployeeData SearchByName(string empName);
     }
 
 

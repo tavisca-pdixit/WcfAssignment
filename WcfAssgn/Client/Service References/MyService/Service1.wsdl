@@ -31,11 +31,17 @@
   <wsdl:message name="ICreateEmployeeDetails_GetAllEmployees_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllEmployeesResponse" />
   </wsdl:message>
-  <wsdl:message name="ICreateEmployeeDetails_Search_InputMessage">
-    <wsdl:part name="parameters" element="tns:Search" />
+  <wsdl:message name="ICreateEmployeeDetails_SearchById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchById" />
   </wsdl:message>
-  <wsdl:message name="ICreateEmployeeDetails_Search_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  <wsdl:message name="ICreateEmployeeDetails_SearchById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreateEmployeeDetails_SearchByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByName" />
+  </wsdl:message>
+  <wsdl:message name="ICreateEmployeeDetails_SearchByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByNameResponse" />
   </wsdl:message>
   <wsdl:portType name="ICreateEmployeeAddRemarks">
     <wsdl:operation name="CreateEmployee">
@@ -56,9 +62,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployees" message="tns:ICreateEmployeeDetails_GetAllEmployees_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeesResponse" message="tns:ICreateEmployeeDetails_GetAllEmployees_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Search">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/Search" message="tns:ICreateEmployeeDetails_Search_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/SearchResponse" message="tns:ICreateEmployeeDetails_Search_OutputMessage" />
+    <wsdl:operation name="SearchById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/SearchById" message="tns:ICreateEmployeeDetails_SearchById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/SearchByIdResponse" message="tns:ICreateEmployeeDetails_SearchById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/SearchByName" message="tns:ICreateEmployeeDetails_SearchByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreateEmployeeDetails/SearchByNameResponse" message="tns:ICreateEmployeeDetails_SearchByName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICreateEmployeeAddRemarks" type="tns:ICreateEmployeeAddRemarks">
@@ -102,8 +112,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Search">
-      <soap:operation soapAction="http://tempuri.org/ICreateEmployeeDetails/Search" style="document" />
+    <wsdl:operation name="SearchById">
+      <soap:operation soapAction="http://tempuri.org/ICreateEmployeeDetails/SearchById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByName">
+      <soap:operation soapAction="http://tempuri.org/ICreateEmployeeDetails/SearchByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -117,7 +136,7 @@
       <soap:address location="http://localhost:52379/Service1.svc" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ICreateEmployeeDetails" binding="tns:BasicHttpBinding_ICreateEmployeeDetails">
-      <soap:address location="http://localhost:52379/Service1.svc" />
+      <soap:address location="http://localhost:52379/Service1.svc/ws" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

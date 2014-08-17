@@ -3,3 +3,8 @@ D:\DemoWebService\WcgAssgn\WcgAssgn\bin\WcgAssgn.dll
 D:\DemoWebService\WcgAssgn\WcgAssgn\bin\WcgAssgn.pdb
 D:\DemoWebService\WcgAssgn\WcgAssgn\obj\Debug\WcgAssgn.dll
 D:\DemoWebService\WcgAssgn\WcgAssgn\obj\Debug\WcgAssgn.pdb
+C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\bin\WcgAssgn.dll
+C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\bin\WcgAssgn.pdb
+C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.csprojResolveAssemblyReference.cache
+C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.dll
+C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.pdb
