@@ -21,10 +21,10 @@ namespace WcgAssgn
             EmployeeData employee = new EmployeeData();
             id = empId.Trim();
 
-            if ((id != null || id != "") && (employeeList.Find(item => item.employeeId == empId)==null))
+            if ((id != null || id != "") && (employeeList.Find(item => item.EmployeeId == empId)==null))
             {
-                employee.employeeId = empId;
-                employee.employeeName = empName;
+                employee.EmployeeId = empId;
+                employee.EmployeeName = empName;
                 employeeList.Add(employee);
                 i++;
                 if (employeeList.Count == i)
@@ -41,10 +41,10 @@ namespace WcgAssgn
             empRemark = remark.Trim();
             if (empRemark != "")
             {
-                employee = employeeList.Find(item => item.employeeId == empId);
+                employee = employeeList.Find(item => item.EmployeeId == empId);
                 if (employee != null)
                 {
-                    employee.employeeRemark = remark;
+                    employee.EmployeeRemark = remark;
                     return 1;
                 }
             }
@@ -55,7 +55,7 @@ namespace WcgAssgn
         public int DeleteEmployee(string empId)
         {
             EmployeeData employee = new EmployeeData();
-            employee = employeeList.Find(item => item.employeeId == empId);
+            employee = employeeList.Find(item => item.EmployeeId == empId);
             if (employee != null)
             {
                 employeeList.Remove(employee);
@@ -73,7 +73,7 @@ namespace WcgAssgn
         public EmployeeData SearchById(string empId)
         {
             EmployeeData employee = new EmployeeData();
-            employee = employeeList.Find(item => item.employeeId == empId);
+            employee = employeeList.Find(item => item.EmployeeId == empId);
             if (employee != null)
             {
                 return employee;
@@ -84,7 +84,7 @@ namespace WcgAssgn
         public EmployeeData SearchByName(string empName)
         {
             EmployeeData employee = new EmployeeData();
-            employee = employeeList.Find(item => item.employeeName == empName);
+            employee = employeeList.Find(item => item.EmployeeName == empName);
             if (employee != null)
             {
                 return employee;

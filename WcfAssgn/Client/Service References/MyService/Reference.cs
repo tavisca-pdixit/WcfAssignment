@@ -23,16 +23,16 @@ namespace Client.MyService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string employeeIdField;
+        private string EmployeeIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string employeeNameField;
+        private string EmployeeNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string employeeRemarkField;
+        private string EmployeeRemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime getDateTimeField;
+        private System.DateTime GetDateTimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -45,53 +45,53 @@ namespace Client.MyService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string employeeId {
+        public string EmployeeId {
             get {
-                return this.employeeIdField;
+                return this.EmployeeIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.employeeIdField, value) != true)) {
-                    this.employeeIdField = value;
-                    this.RaisePropertyChanged("employeeId");
+                if ((object.ReferenceEquals(this.EmployeeIdField, value) != true)) {
+                    this.EmployeeIdField = value;
+                    this.RaisePropertyChanged("EmployeeId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string employeeName {
+        public string EmployeeName {
             get {
-                return this.employeeNameField;
+                return this.EmployeeNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.employeeNameField, value) != true)) {
-                    this.employeeNameField = value;
-                    this.RaisePropertyChanged("employeeName");
+                if ((object.ReferenceEquals(this.EmployeeNameField, value) != true)) {
+                    this.EmployeeNameField = value;
+                    this.RaisePropertyChanged("EmployeeName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string employeeRemark {
+        public string EmployeeRemark {
             get {
-                return this.employeeRemarkField;
+                return this.EmployeeRemarkField;
             }
             set {
-                if ((object.ReferenceEquals(this.employeeRemarkField, value) != true)) {
-                    this.employeeRemarkField = value;
-                    this.RaisePropertyChanged("employeeRemark");
+                if ((object.ReferenceEquals(this.EmployeeRemarkField, value) != true)) {
+                    this.EmployeeRemarkField = value;
+                    this.RaisePropertyChanged("EmployeeRemark");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime getDateTime {
+        public System.DateTime GetDateTime {
             get {
-                return this.getDateTimeField;
+                return this.GetDateTimeField;
             }
             set {
-                if ((this.getDateTimeField.Equals(value) != true)) {
-                    this.getDateTimeField = value;
-                    this.RaisePropertyChanged("getDateTime");
+                if ((this.GetDateTimeField.Equals(value) != true)) {
+                    this.GetDateTimeField = value;
+                    this.RaisePropertyChanged("GetDateTime");
                 }
             }
         }

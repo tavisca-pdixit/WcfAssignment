@@ -65,7 +65,7 @@ namespace Client
 
                     case 2:
                         EmployeeData employee1 = new EmployeeData();
-                        employee1.getDateTime = DateTime.Now;
+                        employee1.GetDateTime = DateTime.Now;
                         Console.WriteLine("\n");
                         Console.WriteLine("*** Adding Remark ***");
                         Console.WriteLine("Enter Employee Id : ");
@@ -84,7 +84,7 @@ namespace Client
                             if (j == 1)
                             {
                                 Console.WriteLine("Remark Added Successfully");
-                                Console.WriteLine("Date & Time : " + employee1.getDateTime);
+                                Console.WriteLine("Date & Time : " + employee1.GetDateTime);
                             }
                             else
                             {
@@ -131,8 +131,8 @@ namespace Client
                             else
                             {
                                 Console.WriteLine("*** Details ***");
-                                Console.WriteLine("Employee ID : " + employee.employeeId);
-                                Console.WriteLine("Employee Name : " + employee.employeeName);
+                                Console.WriteLine("Employee ID : " + employee.EmployeeId);
+                                Console.WriteLine("Employee Name : " + employee.EmployeeName);
                             }
                         }
                         else if (search == "2")
@@ -147,8 +147,8 @@ namespace Client
                             else
                             {
                                 Console.WriteLine("*** Details ***");
-                                Console.WriteLine("Employee ID : " + employee.employeeId);
-                                Console.WriteLine("Employee Name : " + employee.employeeName);
+                                Console.WriteLine("Employee ID : " + employee.EmployeeId);
+                                Console.WriteLine("Employee Name : " + employee.EmployeeName);
                             }
                         }
                         else
@@ -168,12 +168,12 @@ namespace Client
                             foreach (EmployeeData data in employeeList)
                             {
                                 Console.WriteLine("\n");
-                                Console.WriteLine("Employee ID : " + data.employeeId);
-                                Console.WriteLine("Employee Name : " + data.employeeName);
-                                if (data.employeeRemark != null)
+                                Console.WriteLine("Employee ID : " + data.EmployeeId);
+                                Console.WriteLine("Employee Name : " + data.EmployeeName);
+                                if (data.EmployeeRemark != null)
                                 {
-                                    Console.WriteLine("Employee Remark : " + data.employeeRemark);
-                                    Console.WriteLine("Remark added on : " + data.getDateTime);
+                                    Console.WriteLine("Employee Remark : " + data.EmployeeRemark);
+                                    Console.WriteLine("Remark added on : " + data.GetDateTime);
                                 }
                                 else
                                 {
@@ -185,13 +185,13 @@ namespace Client
                         {
                             foreach (EmployeeData data in employeeList)
                             {
-                                if (data.employeeRemark != null)
+                                if (data.EmployeeRemark != null)
                                 {
                                     Console.WriteLine("\n");
-                                    Console.WriteLine("Employee ID : " + data.employeeId);
-                                    Console.WriteLine("Employee Name : " + data.employeeName);
-                                    Console.WriteLine("Employee Remark : " + data.employeeRemark);
-                                    Console.WriteLine("Remark added on : " + data.getDateTime);
+                                    Console.WriteLine("Employee ID : " + data.EmployeeId);
+                                    Console.WriteLine("Employee Name : " + data.EmployeeName);
+                                    Console.WriteLine("Employee Remark : " + data.EmployeeRemark);
+                                    Console.WriteLine("Remark added on : " + data.GetDateTime);
                                 }
                             }
                         }

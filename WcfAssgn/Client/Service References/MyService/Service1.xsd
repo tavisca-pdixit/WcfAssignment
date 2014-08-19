@@ -8,10 +8,10 @@
   <xs:element name="ArrayOfEmployeeData" nillable="true" type="tns:ArrayOfEmployeeData" />
   <xs:complexType name="EmployeeData">
     <xs:sequence>
-      <xs:element minOccurs="0" name="employeeId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="employeeName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="employeeRemark" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="getDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmployeeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GetDateTime" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EmployeeData" nillable="true" type="tns:EmployeeData" />
