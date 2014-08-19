@@ -8,3 +8,7 @@ C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\bin\WcgAssgn.pdb
 C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.csprojResolveAssemblyReference.cache
 C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.dll
 C:\Users\Pratiksha Dixit\Documents\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\bin\WcgAssgn.dll
+D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\bin\WcgAssgn.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.dll
+D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.pdb

@@ -1,12 +1,6 @@
-D:\DemoWebService\WcgAssgn\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
-D:\DemoWebService\WcgAssgn\Client\bin\Debug\Client.exe.config
-D:\DemoWebService\WcgAssgn\Client\bin\Debug\Client.exe
-D:\DemoWebService\WcgAssgn\Client\bin\Debug\Client.pdb
-D:\DemoWebService\WcgAssgn\Client\obj\Debug\Client.exe
-D:\DemoWebService\WcgAssgn\Client\obj\Debug\Client.pdb
-C:\Users\Pratiksha Dixit\Documents\WcfAssgn\Client\bin\Debug\Client.exe.config
-C:\Users\Pratiksha Dixit\Documents\WcfAssgn\Client\bin\Debug\Client.exe
-C:\Users\Pratiksha Dixit\Documents\WcfAssgn\Client\bin\Debug\Client.pdb
-C:\Users\Pratiksha Dixit\Documents\WcfAssgn\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
-C:\Users\Pratiksha Dixit\Documents\WcfAssgn\Client\obj\Debug\Client.exe
-C:\Users\Pratiksha Dixit\Documents\WcfAssgn\Client\obj\Debug\Client.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\Client\bin\Debug\Client.exe.config
+D:\NewWcf\WcfAssignment\WcfAssgn\Client\bin\Debug\Client.exe
+D:\NewWcf\WcfAssignment\WcfAssgn\Client\bin\Debug\Client.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\Client\obj\Debug\Client.exe
+D:\NewWcf\WcfAssignment\WcfAssgn\Client\obj\Debug\Client.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache

@@ -8,44 +8,48 @@ using System.Text;
 
 namespace WcgAssgn
 {
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
+
     public class Service1 : ICreateEmployeeAddRemarks, ICreateEmployeeDetails
     {
-        static List<EmployeeData> employeeList = new List<EmployeeData>();
+        List<EmployeeData> employeeList = new List<EmployeeData>();
         static int i = 0;
-        
-        public int CreateEmployee(string empId,string empName)
+        string id,empRemark;
+
+        public int CreateEmployee(string empId, string empName)
         {
             EmployeeData employee = new EmployeeData();
-            employee.employeeId = empId;
-            employee.employeeName = empName;
-            employeeList.Add(employee);
-            i++;
-            if(employeeList.Count==i)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
+            id = empId.Trim();
 
-           // throw new FaultException(new FaultReason("Employee Record Not Found For Inserting Remarks"), new FaultCode("102"));
+            if ((id != null || id != "") && (employeeList.Find(item => item.employeeId == empId)==null))
+            {
+                employee.employeeId = empId;
+                employee.employeeName = empName;
+                employeeList.Add(employee);
+                i++;
+                if (employeeList.Count == i)
+                {
+                    return 1;
+                }
+            }
+            throw new FaultException(new FaultReason("Employee Id already exist or Employee Id should not be Null"), new FaultCode("102"));
         }
 
         public int EmployeeRemark(string empId, string remark)
         {
             EmployeeData employee = new EmployeeData();
-
-            employee = employeeList.Find(item => item.employeeId == empId);
-            if (employee != null)
+            empRemark = remark.Trim();
+            if (empRemark != "")
             {
-                employee.employeeRemark = remark;
-                return 1;
+                employee = employeeList.Find(item => item.employeeId == empId);
+                if (employee != null)
+                {
+                    employee.employeeRemark = remark;
+                    return 1;
+                }
             }
-            else
-            {
-                return 0;
-            }
+            //throw new FaultException(new FaultReason("Employee Id does not exist"), new FaultCode("103"));
+            return 0;
         }
 
         public int DeleteEmployee(string empId)
@@ -56,11 +60,8 @@ namespace WcgAssgn
             {
                 employeeList.Remove(employee);
                 return 1;
-            }
-            else
-            {
-                return 0;
-            }
+            }          
+            return 0;
         }
 
         public IEnumerable<EmployeeData> GetAllEmployees()
@@ -73,16 +74,22 @@ namespace WcgAssgn
         {
             EmployeeData employee = new EmployeeData();
             employee = employeeList.Find(item => item.employeeId == empId);
-            return employee;
-
+            if (employee != null)
+            {
+                return employee;
+            }
+            throw new FaultException(new FaultReason("Employee Id does not exist"), new FaultCode("103"));
         }
 
         public EmployeeData SearchByName(string empName)
         {
             EmployeeData employee = new EmployeeData();
             employee = employeeList.Find(item => item.employeeName == empName);
-            return employee;
-
+            if (employee != null)
+            {
+                return employee;
+            }
+            throw new FaultException(new FaultReason("Employee Name does not exist"), new FaultCode("104"));
         }
     }
 }

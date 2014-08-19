@@ -1,0 +1,8 @@
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\bin\Debug\ServerFixture.dll.config
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\bin\Debug\ServerFixture.dll
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\bin\Debug\ServerFixture.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\bin\Debug\WcgAssgn.dll
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\bin\Debug\WcgAssgn.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\obj\Debug\ServerFixture.csprojResolveAssemblyReference.cache
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\obj\Debug\ServerFixture.dll
+D:\NewWcf\WcfAssignment\WcfAssgn\ServerFixture\obj\Debug\ServerFixture.pdb

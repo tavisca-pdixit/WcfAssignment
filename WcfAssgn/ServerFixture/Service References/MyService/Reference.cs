@@ -8,103 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Client.MyService {
-    using System.Runtime.Serialization;
-    using System;
+namespace ServerFixture.MyService {
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeData", Namespace="http://schemas.datacontract.org/2004/07/WcgAssgn")]
-    [System.SerializableAttribute()]
-    public partial class EmployeeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string employeeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string employeeNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string employeeRemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime getDateTimeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string employeeId {
-            get {
-                return this.employeeIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.employeeIdField, value) != true)) {
-                    this.employeeIdField = value;
-                    this.RaisePropertyChanged("employeeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string employeeName {
-            get {
-                return this.employeeNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.employeeNameField, value) != true)) {
-                    this.employeeNameField = value;
-                    this.RaisePropertyChanged("employeeName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string employeeRemark {
-            get {
-                return this.employeeRemarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.employeeRemarkField, value) != true)) {
-                    this.employeeRemarkField = value;
-                    this.RaisePropertyChanged("employeeRemark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime getDateTime {
-            get {
-                return this.getDateTimeField;
-            }
-            set {
-                if ((this.getDateTimeField.Equals(value) != true)) {
-                    this.getDateTimeField = value;
-                    this.RaisePropertyChanged("getDateTime");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MyService.ICreateEmployeeAddRemarks")]
@@ -130,12 +35,12 @@ namespace Client.MyService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICreateEmployeeAddRemarksChannel : Client.MyService.ICreateEmployeeAddRemarks, System.ServiceModel.IClientChannel {
+    public interface ICreateEmployeeAddRemarksChannel : ServerFixture.MyService.ICreateEmployeeAddRemarks, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CreateEmployeeAddRemarksClient : System.ServiceModel.ClientBase<Client.MyService.ICreateEmployeeAddRemarks>, Client.MyService.ICreateEmployeeAddRemarks {
+    public partial class CreateEmployeeAddRemarksClient : System.ServiceModel.ClientBase<ServerFixture.MyService.ICreateEmployeeAddRemarks>, ServerFixture.MyService.ICreateEmployeeAddRemarks {
         
         public CreateEmployeeAddRemarksClient() {
         }
@@ -186,31 +91,31 @@ namespace Client.MyService {
     public interface ICreateEmployeeDetails {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployees", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeesResponse")]
-        System.Collections.Generic.List<Client.MyService.EmployeeData> GetAllEmployees();
+        WcgAssgn.EmployeeData[] GetAllEmployees();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployees", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeData>> GetAllEmployeesAsync();
+        System.Threading.Tasks.Task<WcgAssgn.EmployeeData[]> GetAllEmployeesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/SearchById", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/SearchByIdResponse")]
-        Client.MyService.EmployeeData SearchById(string empId);
+        WcgAssgn.EmployeeData SearchById(string empId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/SearchById", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/SearchByIdResponse")]
-        System.Threading.Tasks.Task<Client.MyService.EmployeeData> SearchByIdAsync(string empId);
+        System.Threading.Tasks.Task<WcgAssgn.EmployeeData> SearchByIdAsync(string empId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/SearchByName", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/SearchByNameResponse")]
-        Client.MyService.EmployeeData SearchByName(string empName);
+        WcgAssgn.EmployeeData SearchByName(string empName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/SearchByName", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/SearchByNameResponse")]
-        System.Threading.Tasks.Task<Client.MyService.EmployeeData> SearchByNameAsync(string empName);
+        System.Threading.Tasks.Task<WcgAssgn.EmployeeData> SearchByNameAsync(string empName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICreateEmployeeDetailsChannel : Client.MyService.ICreateEmployeeDetails, System.ServiceModel.IClientChannel {
+    public interface ICreateEmployeeDetailsChannel : ServerFixture.MyService.ICreateEmployeeDetails, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CreateEmployeeDetailsClient : System.ServiceModel.ClientBase<Client.MyService.ICreateEmployeeDetails>, Client.MyService.ICreateEmployeeDetails {
+    public partial class CreateEmployeeDetailsClient : System.ServiceModel.ClientBase<ServerFixture.MyService.ICreateEmployeeDetails>, ServerFixture.MyService.ICreateEmployeeDetails {
         
         public CreateEmployeeDetailsClient() {
         }
@@ -231,27 +136,27 @@ namespace Client.MyService {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<Client.MyService.EmployeeData> GetAllEmployees() {
+        public WcgAssgn.EmployeeData[] GetAllEmployees() {
             return base.Channel.GetAllEmployees();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeData>> GetAllEmployeesAsync() {
+        public System.Threading.Tasks.Task<WcgAssgn.EmployeeData[]> GetAllEmployeesAsync() {
             return base.Channel.GetAllEmployeesAsync();
         }
         
-        public Client.MyService.EmployeeData SearchById(string empId) {
+        public WcgAssgn.EmployeeData SearchById(string empId) {
             return base.Channel.SearchById(empId);
         }
         
-        public System.Threading.Tasks.Task<Client.MyService.EmployeeData> SearchByIdAsync(string empId) {
+        public System.Threading.Tasks.Task<WcgAssgn.EmployeeData> SearchByIdAsync(string empId) {
             return base.Channel.SearchByIdAsync(empId);
         }
         
-        public Client.MyService.EmployeeData SearchByName(string empName) {
+        public WcgAssgn.EmployeeData SearchByName(string empName) {
             return base.Channel.SearchByName(empName);
         }
         
-        public System.Threading.Tasks.Task<Client.MyService.EmployeeData> SearchByNameAsync(string empName) {
+        public System.Threading.Tasks.Task<WcgAssgn.EmployeeData> SearchByNameAsync(string empName) {
             return base.Channel.SearchByNameAsync(empName);
         }
     }

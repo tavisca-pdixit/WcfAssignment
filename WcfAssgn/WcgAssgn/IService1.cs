@@ -41,12 +41,15 @@ namespace WcgAssgn
     public class EmployeeData
     {
         [DataMember]
-        public string employeeName {get; set;}
+        public string employeeName { get; set; }
 
         [DataMember]
         public string employeeRemark { get; set; }
 
         [DataMember]
         public string employeeId { get; set; }
+
+        [DataMember]
+        public DateTime getDateTime {  get; set; }
     }
 }
