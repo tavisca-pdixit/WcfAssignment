@@ -15,18 +15,15 @@ namespace Client.MyService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeData", Namespace="http://schemas.datacontract.org/2004/07/WcgAssgn")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeRemarks", Namespace="http://schemas.datacontract.org/2004/07/WcgAssgn")]
     [System.SerializableAttribute()]
-    public partial class EmployeeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class EmployeeRemarks : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmployeeIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmployeeNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmployeeRemarkField;
@@ -53,19 +50,6 @@ namespace Client.MyService {
                 if ((object.ReferenceEquals(this.EmployeeIdField, value) != true)) {
                     this.EmployeeIdField = value;
                     this.RaisePropertyChanged("EmployeeId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EmployeeName {
-            get {
-                return this.EmployeeNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeeNameField, value) != true)) {
-                    this.EmployeeNameField = value;
-                    this.RaisePropertyChanged("EmployeeName");
                 }
             }
         }
@@ -106,6 +90,67 @@ namespace Client.MyService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeData", Namespace="http://schemas.datacontract.org/2004/07/WcgAssgn")]
+    [System.SerializableAttribute()]
+    public partial class EmployeeData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmployeeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmployeeNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EmployeeId {
+            get {
+                return this.EmployeeIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeeIdField, value) != true)) {
+                    this.EmployeeIdField = value;
+                    this.RaisePropertyChanged("EmployeeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EmployeeName {
+            get {
+                return this.EmployeeNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeeNameField, value) != true)) {
+                    this.EmployeeNameField = value;
+                    this.RaisePropertyChanged("EmployeeName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MyService.ICreateEmployeeAddRemarks")]
     public interface ICreateEmployeeAddRemarks {
@@ -117,10 +162,10 @@ namespace Client.MyService {
         System.Threading.Tasks.Task<int> CreateEmployeeAsync(string empId, string empName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemark", ReplyAction="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemarkResponse")]
-        int EmployeeRemark(string empId, string remark);
+        Client.MyService.EmployeeRemarks EmployeeRemark(string empId, string remark);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemark", ReplyAction="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemarkResponse")]
-        System.Threading.Tasks.Task<int> EmployeeRemarkAsync(string empId, string remark);
+        System.Threading.Tasks.Task<Client.MyService.EmployeeRemarks> EmployeeRemarkAsync(string empId, string remark);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAddRemarks/DeleteEmployee", ReplyAction="http://tempuri.org/ICreateEmployeeAddRemarks/DeleteEmployeeResponse")]
         int DeleteEmployee(string empId);
@@ -164,11 +209,11 @@ namespace Client.MyService {
             return base.Channel.CreateEmployeeAsync(empId, empName);
         }
         
-        public int EmployeeRemark(string empId, string remark) {
+        public Client.MyService.EmployeeRemarks EmployeeRemark(string empId, string remark) {
             return base.Channel.EmployeeRemark(empId, remark);
         }
         
-        public System.Threading.Tasks.Task<int> EmployeeRemarkAsync(string empId, string remark) {
+        public System.Threading.Tasks.Task<Client.MyService.EmployeeRemarks> EmployeeRemarkAsync(string empId, string remark) {
             return base.Channel.EmployeeRemarkAsync(empId, remark);
         }
         
@@ -190,6 +235,24 @@ namespace Client.MyService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployees", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeData>> GetAllEmployeesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromIdResponse")]
+        string GetEmployeeNameFromId(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromIdResponse")]
+        System.Threading.Tasks.Task<string> GetEmployeeNameFromIdAsync(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromIdResponse")]
+        System.Collections.Generic.List<Client.MyService.EmployeeRemarks> GetEmployeeRemarkFromId(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromIdResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeRemarks>> GetEmployeeRemarkFromIdAsync(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarks", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarksResponse")]
+        System.Collections.Generic.List<Client.MyService.EmployeeRemarks> GetAllEmployeeRemarks();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarks", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarksResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeRemarks>> GetAllEmployeeRemarksAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/SearchById", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/SearchByIdResponse")]
         Client.MyService.EmployeeData SearchById(string empId);
@@ -237,6 +300,30 @@ namespace Client.MyService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeData>> GetAllEmployeesAsync() {
             return base.Channel.GetAllEmployeesAsync();
+        }
+        
+        public string GetEmployeeNameFromId(string empId) {
+            return base.Channel.GetEmployeeNameFromId(empId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetEmployeeNameFromIdAsync(string empId) {
+            return base.Channel.GetEmployeeNameFromIdAsync(empId);
+        }
+        
+        public System.Collections.Generic.List<Client.MyService.EmployeeRemarks> GetEmployeeRemarkFromId(string empId) {
+            return base.Channel.GetEmployeeRemarkFromId(empId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeRemarks>> GetEmployeeRemarkFromIdAsync(string empId) {
+            return base.Channel.GetEmployeeRemarkFromIdAsync(empId);
+        }
+        
+        public System.Collections.Generic.List<Client.MyService.EmployeeRemarks> GetAllEmployeeRemarks() {
+            return base.Channel.GetAllEmployeeRemarks();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Client.MyService.EmployeeRemarks>> GetAllEmployeeRemarksAsync() {
+            return base.Channel.GetAllEmployeeRemarksAsync();
         }
         
         public Client.MyService.EmployeeData SearchById(string empId) {

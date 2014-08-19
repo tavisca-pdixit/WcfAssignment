@@ -56,6 +56,9 @@
     <None Include="Service References\MyService\Client.MyService.EmployeeData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MyService\Client.MyService.EmployeeRemarks.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MyService\Service1.wsdl" />
     <None Include="Service References\MyService\Service1.xsd">
       <SubType>Designer</SubType>

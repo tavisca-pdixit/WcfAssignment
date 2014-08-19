@@ -15,6 +15,7 @@ namespace Client
             CreateEmployeeDetailsClient client1 = new CreateEmployeeDetailsClient();
 
             List<EmployeeData> employeeList = new List<EmployeeData>();
+            List<EmployeeRemarks> employeeRemarksList = new List<EmployeeRemarks>();
 
             string ch, empId, empName, empRemark, search, details;
             int ch1;
@@ -41,13 +42,6 @@ namespace Client
                         Console.WriteLine("Enter Employee Id : ");
                         empId = Console.ReadLine();
 
-                        employee2 = client1.SearchById(empId);
-                        if (employee2 != null)
-                        {
-                            Console.WriteLine("Employee with the entered ID already exists");
-                        }
-                        else
-                        {
                             Console.WriteLine("Enter Employee Name : ");
                             empName = Console.ReadLine();
                             int i = client.CreateEmployee(empId, empName);
@@ -59,13 +53,14 @@ namespace Client
                             {
                                 Console.WriteLine("Error! Record not added!");
                             }
-                        }
+                        
                         Console.ReadKey();
                         break;
 
                     case 2:
                         EmployeeData employee1 = new EmployeeData();
-                        employee1.GetDateTime = DateTime.Now;
+                        EmployeeRemarks employeeRemarks = new EmployeeRemarks();
+                        employeeRemarks.GetDateTime = DateTime.Now;
                         Console.WriteLine("\n");
                         Console.WriteLine("*** Adding Remark ***");
                         Console.WriteLine("Enter Employee Id : ");
@@ -80,11 +75,11 @@ namespace Client
                         {
                             Console.WriteLine("Enter Employee Remark : ");
                             empRemark = Console.ReadLine();
-                            int j = client.EmployeeRemark(empId, empRemark);
-                            if (j == 1)
+                            EmployeeRemarks getRemark = client.EmployeeRemark(empId, empRemark);
+                            if (getRemark!=null)
                             {
+                                
                                 Console.WriteLine("Remark Added Successfully");
-                                Console.WriteLine("Date & Time : " + employee1.GetDateTime);
                             }
                             else
                             {
@@ -158,40 +153,44 @@ namespace Client
                         break;
 
                     case 5:
-                        employeeList = client1.GetAllEmployees();
+                        EmployeeRemarks employeeRemarks1 = new EmployeeRemarks();       
+                        string employeeName;
                         Console.WriteLine("\n");
                         Console.WriteLine("1.Get all employee details");
                         Console.WriteLine("2.Get all empoyee details having remarks");
                         details = Console.ReadLine();
                         if (details == "1")
                         {
+                            employeeList = client1.GetAllEmployees();
                             foreach (EmployeeData data in employeeList)
                             {
                                 Console.WriteLine("\n");
                                 Console.WriteLine("Employee ID : " + data.EmployeeId);
                                 Console.WriteLine("Employee Name : " + data.EmployeeName);
-                                if (data.EmployeeRemark != null)
+                                List<EmployeeRemarks> list1 = client1.GetEmployeeRemarkFromId(data.EmployeeId);
+                   
+                                foreach (EmployeeRemarks emp in list1)
                                 {
-                                    Console.WriteLine("Employee Remark : " + data.EmployeeRemark);
-                                    Console.WriteLine("Remark added on : " + data.GetDateTime);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Employee Remark : No Remark added!");
-                                }
+                                    Console.WriteLine("Employee Remark : " + emp.EmployeeRemark);
+                                    Console.WriteLine("Remark added on : " + emp.GetDateTime);
+                                }                              
                             }
                         }
                         else if (details == "2")
                         {
-                            foreach (EmployeeData data in employeeList)
+                            employeeRemarksList = client1.GetAllEmployeeRemarks();
+                            foreach (EmployeeRemarks data in employeeRemarksList)
                             {
-                                if (data.EmployeeRemark != null)
+                                Console.WriteLine("\n");
+                                Console.WriteLine("Employee ID : " + data.EmployeeId);
+                                employeeName = client1.GetEmployeeNameFromId(data.EmployeeId);
+                                Console.WriteLine("Employee Name : " + employeeName);
+                                List<EmployeeRemarks> list1 = client1.GetEmployeeRemarkFromId(data.EmployeeId);
+
+                                foreach (EmployeeRemarks emp in list1)
                                 {
-                                    Console.WriteLine("\n");
-                                    Console.WriteLine("Employee ID : " + data.EmployeeId);
-                                    Console.WriteLine("Employee Name : " + data.EmployeeName);
-                                    Console.WriteLine("Employee Remark : " + data.EmployeeRemark);
-                                    Console.WriteLine("Remark added on : " + data.GetDateTime);
+                                    Console.WriteLine("Employee Remark : " + emp.EmployeeRemark);
+                                    Console.WriteLine("Remark added on : " + emp.GetDateTime);
                                 }
                             }
                         }

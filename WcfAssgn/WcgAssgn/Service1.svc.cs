@@ -13,6 +13,7 @@ namespace WcgAssgn
     public class Service1 : ICreateEmployeeAddRemarks, ICreateEmployeeDetails
     {
         List<EmployeeData> employeeList = new List<EmployeeData>();
+        List<EmployeeRemarks> employeeRemarksList = new List<EmployeeRemarks>();
         static int i = 0;
         string id,empRemark;
 
@@ -35,21 +36,42 @@ namespace WcgAssgn
             throw new FaultException(new FaultReason("Employee Id already exist or Employee Id should not be Null"), new FaultCode("102"));
         }
 
-        public int EmployeeRemark(string empId, string remark)
+        public EmployeeRemarks EmployeeRemark(string empId, string remark)
         {
             EmployeeData employee = new EmployeeData();
+            EmployeeRemarks employeeRemark = new EmployeeRemarks();
             empRemark = remark.Trim();
             if (empRemark != "")
             {
                 employee = employeeList.Find(item => item.EmployeeId == empId);
                 if (employee != null)
                 {
-                    employee.EmployeeRemark = remark;
-                    return 1;
+                    employeeRemark.EmployeeId = empId;
+                    employeeRemark.EmployeeRemark = remark;
+                    employeeRemark.GetDateTime = DateTime.Now;
+                    employeeRemarksList.Add(employeeRemark);
+                    return employeeRemark;
                 }
             }
             //throw new FaultException(new FaultReason("Employee Id does not exist"), new FaultCode("103"));
-            return 0;
+            return null;
+        }
+
+
+        public string GetEmployeeNameFromId(string empId)
+        {
+            EmployeeData employeeData = new EmployeeData();
+            foreach (EmployeeData emp in employeeList)
+            {
+                if (emp.EmployeeId.Equals(empId))
+                    return emp.EmployeeName;
+            }
+            return null;
+        }
+
+        public IEnumerable<EmployeeRemarks> GetEmployeeRemarkFromId(string empId)
+        {
+            return employeeRemarksList.Where(remark => remark.EmployeeId == empId).ToList();
         }
 
         public int DeleteEmployee(string empId)
@@ -67,6 +89,12 @@ namespace WcgAssgn
         public IEnumerable<EmployeeData> GetAllEmployees()
         {
             return employeeList;
+            //throw new NotImplementedException();
+        }
+
+        public IEnumerable<EmployeeRemarks> GetAllEmployeeRemarks()
+        {
+            return employeeRemarksList;
             //throw new NotImplementedException();
         }
 
