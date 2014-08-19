@@ -73,6 +73,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\DataSources\WcgAssgn.EmployeeData.datasource" />
+    <None Include="Properties\DataSources\WcgAssgn.EmployeeRemarks.datasource" />
     <None Include="Service References\MyService\Service1.wsdl" />
     <None Include="Service References\MyService\Service1.xsd">
       <SubType>Designer</SubType>

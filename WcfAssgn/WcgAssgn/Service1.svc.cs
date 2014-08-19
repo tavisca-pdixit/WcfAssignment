@@ -22,7 +22,7 @@ namespace WcgAssgn
             EmployeeData employee = new EmployeeData();
             id = empId.Trim();
 
-            if ((id != null || id != "") && (employeeList.Find(item => item.EmployeeId == empId)==null))
+            if (employeeList.Find(item => item.EmployeeId == empId)==null)
             {
                 employee.EmployeeId = empId;
                 employee.EmployeeName = empName;

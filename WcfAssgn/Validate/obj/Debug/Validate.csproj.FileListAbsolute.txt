@@ -1,0 +1,5 @@
+D:\NewWcf\WcfAssignment\WcfAssgn\Validate\bin\Debug\Validate.dll
+D:\NewWcf\WcfAssignment\WcfAssgn\Validate\bin\Debug\Validate.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\Validate\obj\Debug\Validate.csprojResolveAssemblyReference.cache
+D:\NewWcf\WcfAssignment\WcfAssgn\Validate\obj\Debug\Validate.dll
+D:\NewWcf\WcfAssignment\WcfAssgn\Validate\obj\Debug\Validate.pdb

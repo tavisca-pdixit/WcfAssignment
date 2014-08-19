@@ -22,10 +22,10 @@ namespace ServerFixture.MyService {
         System.Threading.Tasks.Task<int> CreateEmployeeAsync(string empId, string empName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemark", ReplyAction="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemarkResponse")]
-        int EmployeeRemark(string empId, string remark);
+        WcgAssgn.EmployeeRemarks EmployeeRemark(string empId, string remark);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemark", ReplyAction="http://tempuri.org/ICreateEmployeeAddRemarks/EmployeeRemarkResponse")]
-        System.Threading.Tasks.Task<int> EmployeeRemarkAsync(string empId, string remark);
+        System.Threading.Tasks.Task<WcgAssgn.EmployeeRemarks> EmployeeRemarkAsync(string empId, string remark);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeAddRemarks/DeleteEmployee", ReplyAction="http://tempuri.org/ICreateEmployeeAddRemarks/DeleteEmployeeResponse")]
         int DeleteEmployee(string empId);
@@ -69,11 +69,11 @@ namespace ServerFixture.MyService {
             return base.Channel.CreateEmployeeAsync(empId, empName);
         }
         
-        public int EmployeeRemark(string empId, string remark) {
+        public WcgAssgn.EmployeeRemarks EmployeeRemark(string empId, string remark) {
             return base.Channel.EmployeeRemark(empId, remark);
         }
         
-        public System.Threading.Tasks.Task<int> EmployeeRemarkAsync(string empId, string remark) {
+        public System.Threading.Tasks.Task<WcgAssgn.EmployeeRemarks> EmployeeRemarkAsync(string empId, string remark) {
             return base.Channel.EmployeeRemarkAsync(empId, remark);
         }
         
@@ -95,6 +95,24 @@ namespace ServerFixture.MyService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployees", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeesResponse")]
         System.Threading.Tasks.Task<WcgAssgn.EmployeeData[]> GetAllEmployeesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromIdResponse")]
+        string GetEmployeeNameFromId(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeNameFromIdResponse")]
+        System.Threading.Tasks.Task<string> GetEmployeeNameFromIdAsync(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromIdResponse")]
+        WcgAssgn.EmployeeRemarks[] GetEmployeeRemarkFromId(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromId", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetEmployeeRemarkFromIdResponse")]
+        System.Threading.Tasks.Task<WcgAssgn.EmployeeRemarks[]> GetEmployeeRemarkFromIdAsync(string empId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarks", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarksResponse")]
+        WcgAssgn.EmployeeRemarks[] GetAllEmployeeRemarks();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarks", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/GetAllEmployeeRemarksResponse")]
+        System.Threading.Tasks.Task<WcgAssgn.EmployeeRemarks[]> GetAllEmployeeRemarksAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICreateEmployeeDetails/SearchById", ReplyAction="http://tempuri.org/ICreateEmployeeDetails/SearchByIdResponse")]
         WcgAssgn.EmployeeData SearchById(string empId);
@@ -142,6 +160,30 @@ namespace ServerFixture.MyService {
         
         public System.Threading.Tasks.Task<WcgAssgn.EmployeeData[]> GetAllEmployeesAsync() {
             return base.Channel.GetAllEmployeesAsync();
+        }
+        
+        public string GetEmployeeNameFromId(string empId) {
+            return base.Channel.GetEmployeeNameFromId(empId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetEmployeeNameFromIdAsync(string empId) {
+            return base.Channel.GetEmployeeNameFromIdAsync(empId);
+        }
+        
+        public WcgAssgn.EmployeeRemarks[] GetEmployeeRemarkFromId(string empId) {
+            return base.Channel.GetEmployeeRemarkFromId(empId);
+        }
+        
+        public System.Threading.Tasks.Task<WcgAssgn.EmployeeRemarks[]> GetEmployeeRemarkFromIdAsync(string empId) {
+            return base.Channel.GetEmployeeRemarkFromIdAsync(empId);
+        }
+        
+        public WcgAssgn.EmployeeRemarks[] GetAllEmployeeRemarks() {
+            return base.Channel.GetAllEmployeeRemarks();
+        }
+        
+        public System.Threading.Tasks.Task<WcgAssgn.EmployeeRemarks[]> GetAllEmployeeRemarksAsync() {
+            return base.Channel.GetAllEmployeeRemarksAsync();
         }
         
         public WcgAssgn.EmployeeData SearchById(string empId) {

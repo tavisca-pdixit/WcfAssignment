@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WcgAssgn;
 using ServerFixture.MyService;
 using System.ServiceModel;
+using System.Diagnostics;
 
 namespace ServerFixture
 {
@@ -34,7 +35,7 @@ namespace ServerFixture
                 client.CreateEmployee("3", "Shivangi");
                 client.CreateEmployee("3", "Vaish");
             }
-            catch (Exception ex)
+            catch (FaultException ex)
             {
                 Assert.AreEqual(3, client1.GetAllEmployees().Length);
             }
@@ -43,12 +44,14 @@ namespace ServerFixture
         [TestMethod]
         public void EmployeeIdShouldNotBeNull()
         {
+
             try
             {
                 client.CreateEmployee("8", "Vaish");
                 client.CreateEmployee("", "Shivangi");
+
             }
-            catch (Exception ex)
+            catch (FaultException ex)
             {
                 Assert.AreEqual(4, client1.GetAllEmployees().Length);
             }
@@ -57,25 +60,25 @@ namespace ServerFixture
         [TestMethod]
         public void AddRemarkForExistingEmployee()
         {
-            int remark;
+            EmployeeRemarks remark;
             remark = client.EmployeeRemark("8", "Good");
-            Assert.AreEqual(1,remark);
+            Assert.AreEqual("Good", remark.EmployeeRemark);
         }
 
         [TestMethod]
         public void AddRemarkForNonExistingEmployee()
         {
-            int remark1;
+            EmployeeRemarks remark1;
             remark1=client.EmployeeRemark("7", "Good");
-            Assert.AreEqual(0, remark1);
+            Assert.AreEqual(null, remark1);
         }
 
         [TestMethod]
         public void AddBlankRemarkForExistingEmployee()
         {
-            int remark;
+            EmployeeRemarks remark;
             remark = client.EmployeeRemark("3", " ");
-            Assert.AreEqual(0, remark);
+            Assert.AreEqual(null, remark);
         }
 
         [TestMethod]
