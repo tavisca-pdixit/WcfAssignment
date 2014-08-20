@@ -14,3 +14,4 @@ D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.dll
 D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.pdb
 D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\bin\Validate.dll
 D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\bin\Validate.pdb
+D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\obj\Debug\WcgAssgn.csprojResolveAssemblyReference.cache

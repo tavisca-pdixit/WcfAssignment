@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EmployeeDB xmlns="http://www.opengis.net/kml/2.2"
+         xmlns:gx="http://www.google.com/kml/ext/2.2"
+         xmlns:kml="http://www.opengis.net/kml/2.2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:atom="http://www.w3.org/2005/Atom">
+  <TestAddNewEmployee>
+    <EmpId>1</EmpId>
+    <EmpName>Pratiksha</EmpName>
+  </TestAddNewEmployee>
+  <TestAddNewEmployee>
+    <EmpId>9</EmpId>
+    <EmpName>Pratiksha1</EmpName>
+  </TestAddNewEmployee>
+  <TestAddExistingEmployee>
+    <EmpId>2</EmpId>
+    <EmpName>Vaishnavi</EmpName>
+  </TestAddExistingEmployee>
+  <TestAddEmployeeWithNoName>
+    <EmpId>4</EmpId>
+    <EmpName xsi:nil="true"/>
+  </TestAddEmployeeWithNoName>
+  <TestAddRemarkForNonExistingEmployee>
+    <EmpId>6</EmpId>
+    <EmpRemark>Error</EmpRemark>
+  </TestAddRemarkForNonExistingEmployee>
+  <TestRemarkShouldNotBeNullException>
+    <EmpId>1</EmpId>
+    <EmpRemark xsi:nil="true"/>
+  </TestRemarkShouldNotBeNullException>
+  <TestAddingOneRemark>
+    <EmpId>1</EmpId>
+    <EmpName>Pratiksha</EmpName>
+    <EmpRemark>First remark : Good</EmpRemark>
+  </TestAddingOneRemark>
+  <TestAddingMultipleRemark>
+    <EmpId>1</EmpId>
+    <EmpName>Pratiksha</EmpName>
+    <EmpRemark1>First remark : Good</EmpRemark1>
+    <EmpRemark2>Second remark : Bad</EmpRemark2>
+  </TestAddingMultipleRemark>
+  <TestSearchByNameForNonUniqueNames>
+    <EmpId>1</EmpId>
+    <EmpName>Pratiksha</EmpName>
+  </TestSearchByNameForNonUniqueNames>
+  <TestGetAllEmployees>
+    <EmpId>2000</EmpId>
+    <EmpName>Swapnil</EmpName>
+  </TestGetAllEmployees>
+  <!--<TestAddingEmployeeWithNegativeId>
+    <EmpId>-7</EmpId>
+    <EmpName>Akshay</EmpName>
+  </TestAddingEmployeeWithNegativeId>
+  <TestAddingEmployeeWithInvalidName>
+    <EmpId>113</EmpId>
+    <EmpName>Arnav12#$</EmpName>
+  </TestAddingEmployeeWithInvalidName>-->
+
+</EmployeeDB>

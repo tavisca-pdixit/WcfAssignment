@@ -10,16 +10,29 @@ namespace ServerFixture
     [TestClass]
     public class Tests
     {
+        const string _dataSourcePath = @"D:\NewWcf\WcfAssignment\WcfAssgn\WcgAssgn\TestData.xml";
+        private TestContext testContextInstance;
+        public TestContext TestContext
+        {
+            get { return testContextInstance; }
+            set { testContextInstance = value; }
+        }
+
         CreateEmployeeAddRemarksClient client = new CreateEmployeeAddRemarksClient();
         CreateEmployeeDetailsClient client1 = new CreateEmployeeDetailsClient();
 
         [TestMethod]
+        [DeploymentItem(_dataSourcePath)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", _dataSourcePath, "Employee", DataAccessMethod.Sequential)]
         public void AddNewEmployee()
         {
+            string id = testContextInstance.DataRow["EmpId"].ToString();
+            string name = testContextInstance.DataRow["EmpName"].ToString(); 
+
             try
             {
-                client.CreateEmployee("1", "Pratiksha");
-                client.CreateEmployee("2", "Vaish");
+                client.CreateEmployee(id,name);
+                //client.CreateEmployee("2", "Vaish");
             }
             catch (FaultException ex)
             {

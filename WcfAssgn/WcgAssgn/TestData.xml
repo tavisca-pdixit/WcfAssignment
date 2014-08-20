@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EmployeeDB xmlns="http://www.opengis.net/kml/2.2"
+         xmlns:gx="http://www.google.com/kml/ext/2.2"
+         xmlns:kml="http://www.opengis.net/kml/2.2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:atom="http://www.w3.org/2005/Atom">
+  <TestAddNewEmployee>
+    <Employee>
+    <EmpId>1</EmpId>
+    <EmpName>Pratiksha</EmpName>
+      </Employee>
+    <Employee>
+      <EmpId>2</EmpId>
+      <EmpName>Pratiksha1</EmpName>
+      </Employee>
+    
+  </TestAddNewEmployee>
+</EmployeeDB>
